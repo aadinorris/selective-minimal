@@ -1,0 +1,13 @@
+{
+  "name": "selective-vacations-luxury-india",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Selective Vacations - high-end luxury domestic Indian tour agency (Peacock & Gold system)",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./css/input.css -o ./css/output.css --watch",
+    "build": "npx tailwindcss -i ./css/input.css -o ./css/output.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

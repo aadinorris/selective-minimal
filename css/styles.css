@@ -1,0 +1,107 @@
+/* ============================================================
+   Selective Vacations — Global Styles (Peacock & Gold)
+   High-end luxury domestic Indian tour agency
+   Palette: Midnight Peacock #071e26 / Teal #0b3c49 /
+            Turquoise #1d8392 / Emerald #0f4c3a /
+            Gold #d4af37 / Mustard #e69a28 / Coral #d1603d
+   Text: soft off-white #f4f6f7
+   ============================================================ */
+
+/* 1. Base reset + strict mobile containment */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  background-color: #071e26;
+  color: #f4f6f7;
+}
+
+/* Strict containment helper — apply to all top-level layout blocks */
+.contain-strict {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2. Clean luxury typography + smooth rendering */
+body {
+  font-family: "Jost", "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4,
+.font-display {
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+/* 3. Media safety (prevents accidental horizontal scroll) */
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* 4. Luxury utilities */
+.text-gold-gradient {
+  background: linear-gradient(120deg, #f3e2a2 0%, #d4af37 35%, #a88624 60%, #f3e2a2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+}
+
+.glass-peacock {
+  background: rgba(7, 30, 38, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* 5. Selection + scrollbar (subtle luxury detail) */
+::selection {
+  background: #d4af37;
+  color: #071e26;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #071e26;
+}
+::-webkit-scrollbar-thumb {
+  background: #0b3c49;
+  border-radius: 8px;
+  border: 2px solid #071e26;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1d8392;
+}
+
+/* 6. Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 3px;
+}

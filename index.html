@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden w-full max-w-full box-border">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Selective Vacations — Bespoke Luxury India Journeys</title>
+  <meta name="description" content="Selective Vacations — a high-end luxury domestic Indian tour agency crafting bespoke journeys: palaces, backwaters, deserts and Himalayas." />
+
+  <!-- Fonts: Playfair Display (display) + Jost (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Global styles -->
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- Tailwind Play CDN (static implementation — no build step required) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Selective Vacations — Peacock & Gold design tokens
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            peacock: {
+              DEFAULT: '#0b3c49',
+              dark: '#071e26',
+              midnight: '#071e26',
+              teal: '#0b3c49',
+              turquoise: '#1d8392',
+              emerald: '#0f4c3a',
+            },
+            gold: {
+              DEFAULT: '#d4af37',
+              light: '#e8c96a',
+              dark: '#a88624',
+            },
+            luxury: {
+              mustard: '#e69a28',
+              coral: '#d1603d',
+              ivory: '#f4f6f7',
+            },
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            body: ['Jost', 'Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Critical base: prevents white flash + horizontal scroll before styles.css loads */
+    html, body {
+      background-color: #071e26;
+      color: #f4f6f7;
+      overflow-x: hidden;
+      overflow-x: clip;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+  </style>
+</head>
+
+<body class="bg-peacock-midnight text-luxury-ivory font-body antialiased overflow-x-hidden w-full max-w-full box-border">
+
+  <!-- ================= BLOCK 1: Navbar ================= -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 overflow-hidden w-full max-w-full box-border bg-peacock-midnight/90 backdrop-blur-md border-b border-white/10">
+    <nav class="mx-auto flex h-[72px] w-full max-w-7xl box-border items-center justify-between px-5 sm:px-6 lg:px-8" aria-label="Primary">
+      <!-- Brand -->
+      <a href="#hero" class="flex items-center gap-3 shrink-0" aria-label="Selective Vacations home">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full border border-gold/60 font-display text-sm text-gold">SV</span>
+        <span class="font-display text-[13px] sm:text-sm lg:text-[15px] font-semibold tracking-[0.28em] text-luxury-ivory">
+          SELECTIVE <span class="text-gold">VACATIONS</span>
+        </span>
+      </a>
+
+      <!-- Center links (desktop) -->
+      <div class="hidden lg:flex items-center gap-9 text-[13px] font-medium tracking-[0.18em] uppercase">
+        <a href="#destinations" class="text-luxury-ivory/80 transition-colors duration-300 hover:text-gold">Destinations</a>
+        <a href="#circuits" class="text-luxury-ivory/80 transition-colors duration-300 hover:text-gold">Royal Circuits</a>
+        <a href="#itineraries" class="text-luxury-ivory/80 transition-colors duration-300 hover:text-gold">Itineraries</a>
+        <a href="#about" class="text-luxury-ivory/80 transition-colors duration-300 hover:text-gold">About Us</a>
+      </div>
+
+      <!-- CTA + mobile toggle -->
+      <div class="flex items-center gap-3">
+        <a href="#plan" class="hidden sm:inline-flex items-center rounded-full bg-gold px-6 py-2.5 text-[13px] font-semibold tracking-[0.12em] uppercase text-peacock-midnight shadow-[0_8px_30px_rgba(212,175,55,0.35)] transition-all duration-300 hover:bg-gold-light hover:shadow-[0_8px_36px_rgba(212,175,55,0.5)]">
+          Plan Your Escape
+        </a>
+        <button id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"
+          class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-luxury-ivory transition-colors hover:border-gold hover:text-gold">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden lg:hidden overflow-hidden w-full max-w-full box-border border-t border-white/10 bg-peacock-midnight/95 backdrop-blur-md">
+      <div class="w-full max-w-full box-border px-5 py-5 flex flex-col gap-1 text-sm tracking-[0.16em] uppercase">
+        <a href="#destinations" class="rounded-lg px-3 py-3 text-luxury-ivory/85 transition-colors hover:bg-white/5 hover:text-gold">Destinations</a>
+        <a href="#circuits" class="rounded-lg px-3 py-3 text-luxury-ivory/85 transition-colors hover:bg-white/5 hover:text-gold">Royal Circuits</a>
+        <a href="#itineraries" class="rounded-lg px-3 py-3 text-luxury-ivory/85 transition-colors hover:bg-white/5 hover:text-gold">Itineraries</a>
+        <a href="#about" class="rounded-lg px-3 py-3 text-luxury-ivory/85 transition-colors hover:bg-white/5 hover:text-gold">About Us</a>
+        <a href="#plan" class="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-[13px] font-semibold tracking-[0.12em] uppercase text-peacock-midnight transition-colors hover:bg-gold-light">Plan Your Escape</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="overflow-x-hidden w-full max-w-full box-border">
+    <!-- ================= BLOCK 1: Cinematic Hero ================= -->
+    <section id="hero" class="relative overflow-hidden w-full max-w-full box-border">
+      <!-- Deep peacock gradient base -->
+      <div class="absolute inset-0 bg-gradient-to-br from-peacock-dark via-peacock to-peacock-emerald" aria-hidden="true"></div>
+      <!-- Scenic India overlay (Rajasthan palace dusk) -->
+      <img
+        src="https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=2000&auto=format&fit=crop"
+        alt="" aria-hidden="true" loading="eager"
+        class="absolute inset-0 h-full w-full max-w-full box-border object-cover opacity-45" />
+      <!-- Cinematic vignette + gold wash -->
+      <div class="absolute inset-0 bg-gradient-to-b from-peacock-midnight/80 via-peacock-midnight/35 to-peacock-midnight" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-peacock-midnight/70 via-transparent to-transparent" aria-hidden="true"></div>
+      <div class="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gold/15 blur-[120px]" aria-hidden="true"></div>
+      <div class="absolute bottom-0 left-1/4 h-64 w-64 rounded-full bg-peacock-turquoise/25 blur-[110px]" aria-hidden="true"></div>
+
+      <!-- Hero content -->
+      <div class="relative z-10 mx-auto w-full max-w-7xl box-border px-5 sm:px-6 lg:px-8 pt-[136px] sm:pt-[152px] lg:pt-[168px] pb-10 sm:pb-14">
+        <div class="max-w-3xl">
+          <div class="flex items-center gap-4">
+            <span class="h-px w-12 bg-gold/80" aria-hidden="true"></span>
+            <p class="text-[11px] sm:text-xs font-medium tracking-[0.34em] uppercase text-gold">Rajasthan · Golden Triangle · Himalayas</p>
+          </div>
+
+          <h1 class="mt-6 font-display font-semibold leading-[1.04] tracking-[0.06em] text-4xl sm:text-6xl lg:text-7xl xl:text-[5.2rem]">
+            UNVEIL INDIA&rsquo;S<br />
+            <span class="text-gold-gradient drop-shadow-[0_0_28px_rgba(212,175,55,0.45)]">TIMELESS SPLENDOR</span>
+          </h1>
+
+          <p class="mt-6 max-w-xl text-base sm:text-lg font-light leading-relaxed text-luxury-ivory/85">
+            Bespoke Private Journeys Across Rajasthan, The Golden Triangle &amp; The Himalayas
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="#plan" class="inline-flex items-center rounded-full bg-gold px-7 py-3 text-[13px] font-semibold tracking-[0.12em] uppercase text-peacock-midnight shadow-[0_10px_36px_rgba(212,175,55,0.4)] transition-all duration-300 hover:bg-gold-light">Plan Your Escape</a>
+            <a href="#destinations" class="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3 text-[13px] font-medium tracking-[0.12em] uppercase text-luxury-ivory/90 transition-all duration-300 hover:border-gold hover:text-gold">
+              Explore Destinations
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Floating Search / Filter Bar -->
+        <div class="mt-12 sm:mt-14 w-full max-w-full box-border">
+          <form id="plan" action="#" method="get"
+            class="grid w-full max-w-full box-border grid-cols-1 gap-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:p-5 md:grid-cols-[1.4fr_1fr_1fr_auto] md:items-end md:gap-4"
+            aria-label="Search bespoke journeys">
+            <div class="w-full max-w-full box-border">
+              <label for="region" class="mb-1.5 block text-[11px] font-medium tracking-[0.24em] uppercase text-gold">Select Region</label>
+              <select id="region" name="region"
+                class="w-full max-w-full box-border rounded-xl border border-white/15 bg-peacock-midnight/70 px-4 py-3 text-sm text-luxury-ivory outline-none transition-colors focus:border-gold">
+                <option>Rajasthan</option>
+                <option>Golden Triangle</option>
+                <option>Himalayas</option>
+              </select>
+            </div>
+            <div class="w-full max-w-full box-border">
+              <label for="window" class="mb-1.5 block text-[11px] font-medium tracking-[0.24em] uppercase text-gold">Travel Window</label>
+              <input id="window" name="window" type="month"
+                class="w-full max-w-full box-border rounded-xl border border-white/15 bg-peacock-midnight/70 px-4 py-3 text-sm text-luxury-ivory outline-none transition-colors focus:border-gold [color-scheme:dark]" />
+            </div>
+            <div class="w-full max-w-full box-border">
+              <label for="guests" class="mb-1.5 block text-[11px] font-medium tracking-[0.24em] uppercase text-gold">Guests</label>
+              <select id="guests" name="guests"
+                class="w-full max-w-full box-border rounded-xl border border-white/15 bg-peacock-midnight/70 px-4 py-3 text-sm text-luxury-ivory outline-none transition-colors focus:border-gold">
+                <option>2 Guests</option>
+                <option>1 Guest</option>
+                <option>3 – 4 Guests</option>
+                <option>5+ / Private Group</option>
+              </select>
+            </div>
+            <button type="submit"
+              class="inline-flex w-full md:w-auto items-center justify-center rounded-xl bg-gold px-8 py-3.5 text-[13px] font-semibold tracking-[0.14em] uppercase text-peacock-midnight transition-all duration-300 hover:bg-gold-light">
+              Search
+            </button>
+          </form>
+          <p class="mt-3 text-xs tracking-wide text-luxury-ivory/55">Private chauffeur · Palace stays · Concierge on call — tailored in 48 hours.</p>
+        </div>
+      </div>
+
+      <!-- Bottom fade into next block -->
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-peacock-midnight to-transparent" aria-hidden="true"></div>
+    </section>
+
+    <!-- Future blocks (reserved anchors for clean step-by-step build) -->
+    <!-- BLOCK 2: Trust Bar / Stats -->
+    <!-- BLOCK 3: Signature Destinations -->
+    <!-- BLOCK 4: Curated Experiences -->
+    <!-- BLOCK 5: Bespoke Itinerary / Concierge -->
+    <!-- BLOCK 6: Testimonials -->
+    <!-- BLOCK 7: Journal / Inspiration -->
+    <!-- BLOCK 8: CTA + Footer -->
+  </main>
+
+  <footer class="overflow-hidden w-full max-w-full box-border border-t border-white/10">
+    <div class="mx-auto max-w-7xl w-full box-border px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-luxury-ivory/60">
+      <p class="font-display tracking-wide text-luxury-ivory/80">Selective Vacations <span class="text-gold">·</span> Bespoke India Journeys</p>
+      <p>© <span id="year">2026</span> · Block 1 complete</p>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
