@@ -28,10 +28,15 @@ module.exports = {
           coral: "#d1603d",
           ivory: "#f4f6f7",
         },
+        cream: {
+          DEFAULT: "#faf9f6",
+          warm: "#fcfbf9",
+        },
       },
       fontFamily: {
-        display: ['"Playfair Display"', "Georgia", "serif"],
-        body: ["Jost", "Inter", "system-ui", "sans-serif"],
+        display: ["Inter", "Jost", "system-ui", "sans-serif"],
+        sans: ["Inter", "Jost", "system-ui", "sans-serif"],
+        body: ["Inter", "Jost", "system-ui", "sans-serif"],
       },
     },
   },
