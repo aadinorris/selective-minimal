@@ -1,13 +1,24 @@
 {
-  "name": "selective-vacations-luxury-india",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Selective Vacations - high-end luxury domestic Indian tour agency (Peacock & Gold system)",
+  "name": "selectivevacations.html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "npx tailwindcss -i ./css/input.css -o ./css/output.css --watch",
-    "build": "npx tailwindcss -i ./css/input.css -o ./css/output.css --minify"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aadinorris/selective-vacations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aadinorris/selective-vacations/issues"
+  },
+  "homepage": "https://github.com/aadinorris/selective-vacations#readme",
   "devDependencies": {
-    "tailwindcss": "^3.4.0"
+    "vite": "^8.3.0"
   }
 }

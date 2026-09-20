@@ -1,276 +1,419 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth overflow-x-hidden w-full max-w-full box-border">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Selective Vacations — Bespoke Luxury India Journeys</title>
-  <meta name="description" content="Selective Vacations — a high-end luxury domestic Indian tour agency crafting bespoke journeys: palaces, backwaters, deserts and Himalayas." />
-
-  <!-- Fonts: Inter (modern geometric sans) + Jost (supporting sans) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Global styles -->
-  <link rel="stylesheet" href="./css/styles.css" />
-
-  <!-- Tailwind Play CDN (static implementation — no build step required) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Selective Vacations — Peacock & Gold design tokens
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            peacock: {
-              DEFAULT: '#0b3c49',
-              dark: '#071e26',
-              midnight: '#071e26',
-              teal: '#0b3c49',
-              turquoise: '#1d8392',
-              emerald: '#0f4c3a',
-            },
-            gold: {
-              DEFAULT: '#d4af37',
-              light: '#e8c96a',
-              dark: '#a88624',
-            },
-            luxury: {
-              mustard: '#e69a28',
-              coral: '#d1603d',
-              ivory: '#f4f6f7',
-            },
-            cream: {
-              DEFAULT: '#faf9f6',
-              warm: '#fcfbf9',
-            },
-          },
-          fontFamily: {
-            display: ['Inter', 'Jost', 'system-ui', 'sans-serif'],
-            sans: ['Inter', 'Jost', 'system-ui', 'sans-serif'],
-            body: ['Inter', 'Jost', 'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
-
-  <style>
-    /* Critical base: rich cream canvas + peacock ink */
-    html, body {
-      background-color: #f4f1ea;
-      color: #071e26;
-      overflow-x: hidden;
-      overflow-x: clip;
-      width: 100%;
-      max-width: 100%;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-  </style>
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box !important;
-    }
-    html, body {
-      width: 100vw !important;
-      max-width: 100vw !important;
-      overflow-x: hidden !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      background-color: #faf9f6 !important;
-    }
-    .hero-container, header, main, section {
-      width: 100% !important;
-      max-width: 100% !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-    }
-  </style>
-  <style>
-    html {
-      width: 100% !important;
-      overflow-x: hidden !important;
-    }
-    body {
-      width: 100% !important;
-      max-width: 100% !important;
-      overflow-x: hidden !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      position: relative !important;
-    }
-    /* Force all full-width sections to span edge-to-edge without shifting */
-    section, header, div {
-      box-sizing: border-box !important;
-    }
-  </style>
-  <style>
-    /* Custom Sleek Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #faf9f6;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #071e26;
-      border-radius: 0px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #d4af37;
-    }
-  </style>
-  <style>
-    /* Single-screen viewport lock: zero vertical scrolling */
-    html, body {
-      height: 100vh !important;
-      overflow: hidden !important;
-      background-color: #faf9f6 !important;
-    }
-  </style>
-</head>
-
-<body class="bg-[#f4f1ea] text-peacock-midnight font-body antialiased w-full max-w-full overflow-x-hidden p-0 m-0 box-border">
-
-  <!-- ================= BLOCK 1: Navbar ================= -->
-  <header id="navbar" class="fixed top-0 inset-x-0 z-50 overflow-hidden w-full max-w-full box-border m-0 p-0 bg-[#f4f1ea]/85 backdrop-blur-md border-b border-peacock-midnight/10">
-    <div class="relative mx-auto w-full max-w-7xl box-border px-6 sm:px-8 lg:px-10">
-      <!-- Centered brand -->
-      <div class="flex h-16 items-center justify-center">
-        <a href="#hero" class="flex items-center gap-3 shrink-0" aria-label="Selective Vacations home">
-          <span class="font-display text-xs sm:text-sm font-light tracking-[0.25em] text-peacock-midnight">
-            SELECTIVE VACATIONS
-          </span>
-        </a>
-      </div>
-      <!-- Centered micro nav -->
-      <nav class="hidden lg:flex h-11 items-center justify-center gap-1 text-[11px] font-normal tracking-[0.26em] uppercase" aria-label="Primary">
-        <a href="#destinations" class="nav-link px-4 py-1.5 rounded-none text-peacock-midnight/65 transition-all duration-300 ease-out hover:bg-peacock-midnight hover:text-gold">Destinations</a>
-        <a href="#circuits" class="nav-link px-4 py-1.5 rounded-none text-peacock-midnight/65 transition-all duration-300 ease-out hover:bg-peacock-midnight hover:text-gold">Royal Circuits</a>
-        <a href="#itineraries" class="nav-link px-4 py-1.5 rounded-none text-peacock-midnight/65 transition-all duration-300 ease-out hover:bg-peacock-midnight hover:text-gold">Itineraries</a>
-        <a href="#about" class="nav-link px-4 py-1.5 rounded-none text-peacock-midnight/65 transition-all duration-300 ease-out hover:bg-peacock-midnight hover:text-gold">About Us</a>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selective Vacations | India, Curated Around You</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <a href="/" class="logo">Selective Vacations</a>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#travel-styles">Travel Styles</a></li>
+          <li><a href="#featured-journeys">Journeys</a></li>
+          <li><a href="#why-selective">Why Us</a></li>
+        </ul>
       </nav>
-      <!-- Contact + mobile toggle (absolute right) -->
-      <div class="absolute right-6 sm:right-8 lg:right-10 top-8 -translate-y-1/2 flex items-center gap-3">
-        <a href="#plan" class="hidden sm:inline-flex items-center rounded-none bg-peacock-midnight px-6 py-2.5 text-[11px] font-medium tracking-[0.2em] uppercase text-[#faf9f6] transition-colors duration-300 hover:bg-peacock-teal">
-          Contact
+      <div class="header-actions">
+        <a href="#plan-trip" class="btn btn-primary">
+          Plan My Trip
+          <span class="btn-icon">↗</span>
         </a>
-        <button id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"
-          class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-none border border-peacock-midnight/20 text-peacock-midnight transition-all duration-300 hover:bg-peacock-midnight hover:text-gold">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-            <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
-          </svg>
-        </button>
       </div>
-    </div>
+    </header>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden lg:hidden overflow-hidden w-full max-w-full box-border border-t border-peacock-midnight/10 bg-[#f4f1ea]/95 backdrop-blur-md">
-      <div class="w-full max-w-full box-border px-5 py-5 flex flex-col gap-1 text-sm tracking-[0.16em] uppercase">
-        <a href="#destinations" class="rounded-none px-3 py-3 text-peacock-midnight/80 transition-all duration-300 ease-out hover:bg-peacock-midnight hover:text-gold">Destinations</a>
-        <a href="#circuits" class="rounded-none px-3 py-3 text-peacock-midnight/80 transition-all duration-300 ease-out hover:bg-peacock-midnight hover:text-gold">Royal Circuits</a>
-        <a href="#itineraries" class="rounded-none px-3 py-3 text-peacock-midnight/80 transition-all duration-300 ease-out hover:bg-peacock-midnight hover:text-gold">Itineraries</a>
-        <a href="#about" class="rounded-none px-3 py-3 text-peacock-midnight/80 transition-all duration-300 ease-out hover:bg-peacock-midnight hover:text-gold">About Us</a>
-        <a href="#plan" class="mt-2 inline-flex items-center justify-center rounded-none bg-peacock-midnight px-6 py-2.5 text-[12px] font-medium tracking-[0.2em] uppercase text-[#faf9f6] transition-colors duration-300 hover:bg-peacock-teal">Contact</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="overflow-x-hidden w-full max-w-full box-border m-0 p-0 bg-transparent">
-    <!-- ================= BLOCK 1: Cinematic Hero ================= -->
-    <section id="hero" class="relative overflow-hidden w-full max-w-full box-border m-0 p-0 min-h-[100vh] flex flex-col">
-      <!-- Local cinematic carousel: crossfade every ~3.5s (see js/main.js) -->
-      <div class="absolute inset-0 w-full max-w-full overflow-hidden box-border m-0 p-0 bg-peacock-midnight" aria-hidden="true">
-        <img data-hero-slide src="./udaipur.jpg" alt="Udaipur palace on the lake"
-          fetchpriority="high" loading="eager" decoding="async"
-          class="hero-slide absolute inset-0 h-full w-full max-w-full box-border object-cover transition-opacity duration-1000 ease-in-out opacity-100" />
-        <img data-hero-slide src="./kerela (1).jpg" alt="Kerala backwater houseboat" loading="lazy" decoding="async"
-          class="hero-slide absolute inset-0 h-full w-full max-w-full box-border object-cover transition-opacity duration-1000 ease-in-out opacity-0" />
-        <img data-hero-slide src="./varanasi.jpg" alt="Varanasi ghats at golden hour" loading="lazy" decoding="async"
-          class="hero-slide absolute inset-0 h-full w-full max-w-full box-border object-cover transition-opacity duration-1000 ease-in-out opacity-0" />
-        <img data-hero-slide src="./Mountain.jpg" alt="Snowy Himalayan peaks" loading="lazy" decoding="async"
-          class="hero-slide absolute inset-0 h-full w-full max-w-full box-border object-cover transition-opacity duration-1000 ease-in-out opacity-0" />
-      </div>
-      <!-- Deep peacock grade overlay for punchy, readable type -->
-      <div class="absolute inset-0 bg-gradient-to-t from-[#071e26] via-transparent to-[#071e26]/40" aria-hidden="true"></div>
-
-      <!-- Quiet-luxury editorial content — vast, atmospheric, left-aligned -->
-      <div class="relative z-10 mx-auto flex flex-1 w-full max-w-7xl box-border items-center px-6 sm:px-10 lg:px-16 pt-28 md:pt-32 pb-10">
-        <div class="max-w-2xl">
-          <p data-reveal class="text-[11px] font-normal tracking-[0.42em] uppercase text-gold/70">[ Private Residences — 01 ]</p>
-
-          <h1 data-reveal class="mt-8 font-sans font-semibold tracking-tight leading-[1.1] text-3xl sm:text-4xl antialiased text-white">
-            UNVEILING INDIA&rsquo;S<br />
-            MOST GUARDED SANCTUARIES.
-          </h1>
-
-          <p data-reveal data-reveal-delay="120" class="mt-5 font-sans text-sm font-normal lowercase tracking-wide text-white/75">
-            raw heritage. untamed luxury.
-          </p>
-
-          <div data-reveal data-reveal-delay="200" class="mt-8 flex flex-wrap items-center gap-x-12 gap-y-6">
-            <a href="#plan" class="inline-flex items-center rounded-none bg-gold px-6 py-2.5 text-[12px] font-medium tracking-[0.2em] uppercase text-peacock-midnight transition-colors duration-300 hover:bg-gold-light">Contact</a>
-            <a href="#destinations" class="group relative inline-flex items-center gap-2 pb-1 text-[12px] font-normal tracking-[0.22em] uppercase text-white/75 transition-colors duration-300 hover:text-gold">
-              Explore Archives
-              <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
-              <span class="absolute bottom-0 left-0 h-px w-0 bg-gold transition-all duration-500 group-hover:w-full" aria-hidden="true"></span>
+    <main>
+      <!-- Cinematic Hero -->
+      <section class="hero-section">
+        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=2071" alt="Taj Mahal at Sunrise" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="badge badge-dark">• 14+ Years of Expertise</span>
+          <h1 class="hero-title">India, <span class="italic-serif">curated</span> around you.</h1>
+          <p class="hero-subtitle">Discover India through thoughtfully designed journeys, handpicked stays, private transportation and local expertise.</p>
+          <div class="hero-ctas">
+            <a href="#plan-trip" class="btn btn-primary">
+              Plan My Journey
+              <span class="btn-icon">↗</span>
             </a>
+          </div>
+        </div>
+
+        <!-- Trip Planner Bar -->
+        <div class="trip-planner">
+          <div class="planner-field">
+            <label>Destination</label>
+            <input type="text" placeholder="Where to?">
+          </div>
+          <div class="planner-field">
+            <label>When</label>
+            <input type="text" placeholder="Month">
+          </div>
+          <div class="planner-field">
+            <label>Travelers</label>
+            <input type="number" placeholder="2 Adults" min="1">
+          </div>
+          <div class="planner-field">
+            <label>Style</label>
+            <select>
+              <option value="" disabled selected>Any Style</option>
+              <option value="luxury">Luxury</option>
+              <option value="family">Family</option>
+              <option value="honeymoon">Honeymoon</option>
+            </select>
+          </div>
+          <a href="#plan-trip" class="btn btn-primary">
+            Search
+            <span class="btn-icon">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section: Intro -->
+      <section class="section text-center section-intro">
+        <div class="container" style="max-width: 800px; position: relative; z-index: 10;">
+          <span class="badge">• THE SELECTIVE WAY</span>
+          <h2 style="font-size: 3rem; margin-bottom: 2rem;">India has many <span class="italic-serif">stories</span>. Which one is yours?</h2>
+          <p style="font-size: 1.25rem; color: var(--color-text-muted); margin-bottom: 2rem;">
+            India isn't one destination. It's a thousand different journeys.<br><br>
+            From the timeless monuments of the Golden Triangle to Kerala's peaceful backwaters, Rajasthan's royal heritage, the mountains of Kashmir and Ladakh, or the beaches of Goa — Selective Vacations creates journeys around the way you want to experience India.
+          </p>
+          <a href="#destinations" class="btn btn-outline">
+            Explore India
+            <span class="btn-icon">↓</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Marquee Divider -->
+      <div class="marquee-wrapper">
+        <div class="marquee-background">
+          <div class="marquee-track">
+            <div class="marquee-content">
+              <span class="marquee-item">The Golden Triangle <svg viewBox="0 0 24 24" stroke-width="2" fill="none" class="marquee-icon"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span>
+              <span class="marquee-item">Kerala Backwaters <svg viewBox="0 0 24 24" stroke-width="2" fill="none" class="marquee-icon"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span>
+              <span class="marquee-item">Royal Rajasthan <svg viewBox="0 0 24 24" stroke-width="2" fill="none" class="marquee-icon"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span>
+              <span class="marquee-item">Himalayan Privilege <svg viewBox="0 0 24 24" stroke-width="2" fill="none" class="marquee-icon"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span>
+              <span class="marquee-item">Goa Escapes <svg viewBox="0 0 24 24" stroke-width="2" fill="none" class="marquee-icon"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+              <span class="marquee-item">The Golden Triangle <svg viewBox="0 0 24 24" stroke-width="2" fill="none" class="marquee-icon"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span>
+              <span class="marquee-item">Kerala Backwaters <svg viewBox="0 0 24 24" stroke-width="2" fill="none" class="marquee-icon"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span>
+              <span class="marquee-item">Royal Rajasthan <svg viewBox="0 0 24 24" stroke-width="2" fill="none" class="marquee-icon"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span>
+              <span class="marquee-item">Himalayan Privilege <svg viewBox="0 0 24 24" stroke-width="2" fill="none" class="marquee-icon"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span>
+              <span class="marquee-item">Goa Escapes <svg viewBox="0 0 24 24" stroke-width="2" fill="none" class="marquee-icon"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Bottom search bar with architect inquiry action: unified dark glass -->
-      <div id="plan" class="relative z-10 mx-auto w-full max-w-4xl box-border px-6 sm:px-8 pb-12">
-        <form action="mailto:concierge@selectivevacations.in" method="get"
-          class="max-w-4xl mx-auto w-full box-border flex flex-col gap-2 rounded-none bg-[#071e26]/90 backdrop-blur-md p-4 shadow-none md:flex-row md:items-stretch md:gap-0 md:py-2 md:pl-6 md:pr-2"
-          aria-label="Plan a bespoke journey">
-          <div class="flex-1 w-full max-w-full box-border md:pr-5">
-            <label for="region" class="block text-[10px] font-medium tracking-[0.24em] uppercase text-white/50">Region</label>
-            <select id="region" name="region"
-              class="mt-1 w-full max-w-full box-border bg-transparent text-sm font-normal tracking-wide text-white outline-none cursor-pointer [&>option]:bg-peacock-midnight">
-              <option>Rajasthan</option>
-              <option>Golden Triangle</option>
-              <option>Himalayas</option>
-              <option>Coastal Retreats</option>
-            </select>
+      <!-- Section: Destinations Grid -->
+      <section id="destinations" class="section">
+        <div class="container">
+          <span class="badge">• DESTINATIONS</span>
+          <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Explore by <span class="italic-serif">region</span>.</h2>
+          <div class="destination-grid">
+            <!-- Golden Triangle -->
+            <a href="#" class="dest-card dest-large-1">
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=1476" alt="Golden Triangle">
+              <div class="dest-overlay">
+                <h3>Golden Triangle</h3>
+                <p>Delhi • Agra • Jaipur</p>
+                <div class="dest-cta">Explore <span>↗</span></div>
+              </div>
+            </a>
+            <!-- South India -->
+            <a href="#" class="dest-card dest-large-2">
+              <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&q=80&w=1632" alt="South India">
+              <div class="dest-overlay">
+                <h3>South India</h3>
+                <p>Temples, culture & heritage</p>
+                <div class="dest-cta">Explore <span>↗</span></div>
+              </div>
+            </a>
+            <!-- Taj Mahal -->
+            <a href="#" class="dest-card">
+              <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=1470" alt="Taj Mahal">
+              <div class="dest-overlay">
+                <h3>Taj Mahal</h3>
+                <p>The monument of love</p>
+                <div class="dest-cta">Explore <span>↗</span></div>
+              </div>
+            </a>
+            <!-- Kerala -->
+            <a href="#" class="dest-card">
+              <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=1469" alt="Kerala">
+              <div class="dest-overlay">
+                <h3>Kerala</h3>
+                <p>Backwaters & slow travel</p>
+                <div class="dest-cta">Explore <span>↗</span></div>
+              </div>
+            </a>
+            <!-- Kashmir -->
+            <a href="#" class="dest-card">
+              <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&q=80&w=1470" alt="Kashmir">
+              <div class="dest-overlay">
+                <h3>Kashmir</h3>
+                <p>Mountains & lakes</p>
+                <div class="dest-cta">Explore <span>↗</span></div>
+              </div>
+            </a>
+            <!-- Goa -->
+            <a href="#" class="dest-card">
+              <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&q=80&w=1374" alt="Goa">
+              <div class="dest-overlay">
+                <h3>Goa</h3>
+                <p>Coastlines & culture</p>
+                <div class="dest-cta">Explore <span>↗</span></div>
+              </div>
+            </a>
           </div>
-          <div class="hidden md:block w-px self-stretch bg-white/10 mx-1" aria-hidden="true"></div>
-          <div class="flex-1 w-full max-w-full box-border md:px-5">
-            <label for="window" class="block text-[10px] font-medium tracking-[0.24em] uppercase text-white/50">Travel Window</label>
-            <input id="window" name="window" type="month"
-              class="mt-1 w-full max-w-full box-border bg-transparent text-sm font-normal tracking-wide text-white outline-none [color-scheme:dark]" />
+        </div>
+      </section>
+
+      <!-- Section: Travel Styles -->
+      <section id="travel-styles" class="section section-dark">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 4rem;">
+            <span class="badge badge-dark">• TRAVEL STYLES</span>
+            <h2 style="font-size: 3rem;">Choose your <span class="italic-serif">way</span> to travel.</h2>
           </div>
-          <div class="hidden md:block w-px self-stretch bg-white/10 mx-1" aria-hidden="true"></div>
-          <div class="flex-1 w-full max-w-full box-border md:px-5">
-            <label for="guests" class="block text-[10px] font-medium tracking-[0.24em] uppercase text-white/50">Guests</label>
-            <select id="guests" name="guests"
-              class="mt-1 w-full max-w-full box-border bg-transparent text-sm font-normal tracking-wide text-white outline-none cursor-pointer [&>option]:bg-peacock-midnight">
-              <option>2 Guests</option>
-              <option>1 Guest</option>
-              <option>3 – 4 Guests</option>
-              <option>5+ / Private Group</option>
-            </select>
+          <div class="grid-3">
+            <a href="#" class="style-card">
+              <div class="style-icon">🕌</div>
+              <h3>Culture & Heritage</h3>
+              <p>India's history, architecture, and living culture.</p>
+            </a>
+            <a href="#" class="style-card">
+              <div class="style-icon">👑</div>
+              <h3>Luxury India</h3>
+              <p>Premium hotels and elevated experiences.</p>
+            </a>
+            <a href="#" class="style-card">
+              <div class="style-icon">👨‍👩‍👧‍👦</div>
+              <h3>Family Journeys</h3>
+              <p>Thoughtfully planned holidays for families.</p>
+            </a>
+            <a href="#" class="style-card">
+              <div class="style-icon">❤️</div>
+              <h3>Honeymoon</h3>
+              <p>Private, intimate journeys designed for couples.</p>
+            </a>
+            <a href="#" class="style-card">
+              <div class="style-icon">⛰️</div>
+              <h3>Adventure</h3>
+              <p>Mountains, wildlife, and beyond the ordinary.</p>
+            </a>
+            <a href="#" class="style-card">
+              <div class="style-icon">🧘‍♂️</div>
+              <h3>Wellness</h3>
+              <p>Ayurveda, yoga and restorative experiences.</p>
+            </a>
           </div>
-          <div class="flex items-stretch w-full md:w-auto max-w-full box-border md:pl-3">
-            <button type="submit"
-              class="inline-flex w-full md:w-auto items-center justify-center gap-2 rounded-none bg-gold px-8 py-3.5 md:py-3 text-[11px] font-semibold tracking-[0.18em] uppercase text-peacock-midnight transition-all duration-300 ease-out hover:bg-gold-light whitespace-nowrap">
-              Inquire with a Private Travel Architect
-              <span aria-hidden="true">-&gt;</span>
-            </button>
+        </div>
+      </section>
+
+      <!-- Section: Featured Journeys -->
+      <section id="featured-journeys" class="section">
+        <div class="container">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+            <div>
+              <span class="badge">• ITINERARIES</span>
+              <h2 style="font-size: 2.5rem;">Featured <span class="italic-serif">journeys</span>.</h2>
+            </div>
+            <a href="#" class="btn btn-outline">View All <span class="btn-icon">↗</span></a>
           </div>
-        </form>
+          <div class="grid-3">
+            <!-- Journey 1 -->
+            <div class="journey-card">
+              <div class="journey-img">
+                <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&q=80&w=800" alt="Kerala">
+                <span class="journey-badge">Private Journey</span>
+              </div>
+              <div class="journey-content">
+                <div class="journey-meta">
+                  <span>8 Nights</span>
+                  <span>South India</span>
+                </div>
+                <h3>Kerala Culture Tour</h3>
+                <p>Experience the backwaters, lush tea gardens, and slow travel through God's Own Country.</p>
+                <div class="journey-actions">
+                  <a href="#" class="btn btn-outline">Details</a>
+                  <a href="#" class="btn btn-primary">Customize</a>
+                </div>
+              </div>
+            </div>
+            <!-- Journey 2 -->
+            <div class="journey-card">
+              <div class="journey-img">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&q=80&w=800" alt="Golden Triangle">
+                <span class="journey-badge">Private Journey</span>
+              </div>
+              <div class="journey-content">
+                <div class="journey-meta">
+                  <span>6 Nights</span>
+                  <span>North India</span>
+                </div>
+                <h3>Classic Golden Triangle</h3>
+                <p>Discover the magnificent monuments, bustling bazaars, and royal heritage of North India.</p>
+                <div class="journey-actions">
+                  <a href="#" class="btn btn-outline">Details</a>
+                  <a href="#" class="btn btn-primary">Customize</a>
+                </div>
+              </div>
+            </div>
+            <!-- Journey 3 -->
+            <div class="journey-card">
+              <div class="journey-img">
+                <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&q=80&w=800" alt="Himalayas">
+                <span class="journey-badge">Private Journey</span>
+              </div>
+              <div class="journey-content">
+                <div class="journey-meta">
+                  <span>7 Nights</span>
+                  <span>Himalayas</span>
+                </div>
+                <h3>Himalayan Privilege</h3>
+                <p>Breathe in the mountain air and witness the stunning landscapes of the Indian Himalayas.</p>
+                <div class="journey-actions">
+                  <a href="#" class="btn btn-outline">Details</a>
+                  <a href="#" class="btn btn-primary">Customize</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Split Customization -->
+      <section class="section">
+        <div class="container split-layout">
+          <div class="split-image">
+            <img src="https://images.unsplash.com/photo-1534777367038-9404f45b869a?auto=format&fit=crop&q=80&w=800" alt="Traveler in India">
+          </div>
+          <div class="split-content">
+            <span class="badge">• BESPOKE</span>
+            <h2>Your trip. <br><span class="italic-serif">Your way.</span></h2>
+            <p style="font-size: 1.125rem; color: var(--color-text-muted); margin-bottom: 2rem;">
+              Not a package. A journey designed around you.<br><br>
+              Every traveler experiences India differently. That's why Selective Vacations builds journeys around your interests, pace, comfort and priorities. Want luxury? We can build around it. Looking for adventure? We'll take you beyond the obvious.
+            </p>
+            <a href="#plan-trip" class="btn btn-primary">
+              Start Planning
+              <span class="btn-icon">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Why Selective (Dark) -->
+      <section id="why-selective" class="section section-dark">
+        <div class="container">
+          <div style="text-align: center;">
+            <span class="badge badge-dark">• THE DIFFERENCE</span>
+            <h2 style="font-size: 3rem;">Why travel with <span class="italic-serif">Selective?</span></h2>
+          </div>
+          <div class="trust-grid">
+            <div class="trust-item">
+              <h3>14+ Years Experience</h3>
+              <p>More than a decade of experience designing and delivering travel experiences.</p>
+            </div>
+            <div class="trust-item">
+              <h3>India, From the Inside</h3>
+              <p>Deep destination knowledge and an extensive premium network across India.</p>
+            </div>
+            <div class="trust-item">
+              <h3>Built Around You</h3>
+              <p>Your itinerary, hotels and transportation are selected precisely around your needs.</p>
+            </div>
+            <div class="trust-item">
+              <h3>24/7 On-Ground Support</h3>
+              <p>We're there when you need us — before and throughout your journey.</p>
+            </div>
+            <div class="trust-item">
+              <h3>Trusted by Travelers</h3>
+              <p>Trusted by hundreds of families for their perfect India journeys.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h2 class="logo" style="font-size: 2rem;">Selective Vacations</h2>
+            <p style="color: rgba(246,245,241,0.7); margin-top: 1rem;">Specialists in personalized India travel.</p>
+            <div style="margin-top: 2rem;">
+              <a href="#plan-trip" class="btn btn-primary">
+                Plan My Trip
+                <span class="btn-icon">↗</span>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#destinations">Destinations</a></li>
+              <li><a href="#travel-styles">Travel Styles</a></li>
+              <li><a href="#featured-journeys">Journeys</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Destinations</h4>
+            <ul>
+              <li><a href="#">Golden Triangle</a></li>
+              <li><a href="#">Rajasthan</a></li>
+              <li><a href="#">Kerala</a></li>
+              <li><a href="#">Kashmir</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="#">[Email Provided]</a></li>
+              <li><a href="#">[Phone Provided]</a></li>
+              <li><a href="#">[Office Provided]</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Selective Vacations. All rights reserved.</p>
+          <div style="display: flex; gap: 1rem;">
+            <a href="#" style="color: rgba(246,245,241,0.5); text-decoration: none;">Instagram</a>
+            <a href="#" style="color: rgba(246,245,241,0.5); text-decoration: none;">Facebook</a>
+          </div>
+        </div>
       </div>
+    </footer>
 
-      <!-- Bottom blend melts into the cream canvas (see light gradient above) -->
-    </section>
+    <!-- Floating WhatsApp -->
+    <a href="#" class="floating-whatsapp" title="WhatsApp Us">
+      <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+    </a>
 
-  </main>
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta">
+      <a href="#" class="btn-mobile">WhatsApp</a>
+      <a href="#plan-trip" class="btn-mobile primary">Plan Trip</a>
+    </div>
 
-  <script src="./js/main.js"></script>
-</body>
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
